@@ -8,7 +8,7 @@
     --text-main: rgb(221, 221, 221);    /* RGB */
     --accent-color: hsl(217,91%,52%);   /* HSL */
     --named-color: red;
-    --wide-gamut: oklch(0.6 0.2 250) /* Wider-gamut color */ 
+    --wide-gamut: oklch(0.6 0.2 250); /* Wider-gamut color */ 
 
     /* 3 Unique Absolute Units */
     --border-size: 2px;
@@ -161,4 +161,89 @@ nav {
     max-width: 100%;
     height: auto;
     border-radius: 4px;
+}
+
+/* Selectors */
+/* Universal Selector */
+* {
+    box-sizing: border-box;
+}
+
+/* Element Selector */
+p {
+    margin-bottom: 1.5rem;
+}
+
+/* Class Selector */
+.important-note {
+    font-weight: bold;
+    color: var(--wide-gamut);
+}
+
+/* ID Selector */
+#details {
+    border-left: 5px solid var(--accent-color);
+}
+
+/* Attribute Selector */
+input[type="text"] {
+    background-color: #444;
+    color: white;
+    border: 1px solid #777;
+}
+
+/* 6. Selector List (element, element) */
+h1, h2, h3 {
+    font-family: 'Lora', Arial;
+    margin-top: 0;
+}
+
+/* Combinators */
+
+/* Descendant Selector */
+main section {
+    background-color: #353535;
+}
+
+/* Child Selector */
+#visuals > div {
+    border: 1px solid #555;
+}
+
+/* General Sibling Selector */
+h2 ~ p {
+    font-style: italic;
+}
+
+/* Adjacent Sibling Selector */
+h1 + hr {
+    border: 2px solid var(--accent-color);
+}
+
+/* Combining Two Selectors */
+section#attendence {
+    padding-left: 20px;
+}
+
+/* Modern Selectors */
+
+/* Using :has() */
+section:has(form) {
+    background-color: #2a2a2a;
+    padding: 30px;
+}
+
+/* Nested Selectors */
+#contact-form {
+    background: #333;
+}
+
+#contact-form fieldset {
+    border: 1px solid var(--accent-color);
+    margin-bottom: 20px;
+}
+
+#contact-form fieldset legend {
+    color: var(--accent-color);
+    padding: 0 10px;
 }
