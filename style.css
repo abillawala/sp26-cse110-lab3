@@ -1,0 +1,112 @@
+/* Import an external font */
+@import url('https://fonts.google.com/specimen/Lora');
+
+/* Set up Global Variables*/
+:root {
+    /* Color Requirements */
+    --bg-color: #2F2F2F;    /* Hex */
+    --text-main: rgb(221, 221, 221);    /* RGB */
+    --accent-color: hsl(217,91%,52%);   /* HSL */
+    --named-color: red;
+    --wide-gamut: oklch(0.6 0.2 250) /* Wider-gamut color */ 
+
+    /* 3 Unique Absolute Units */
+    --border-size: 2px;
+    --margin-mm: 5mm;
+    --page-width: 8.5in;
+    --font-pt: 11pt;
+
+    /* 3 Unique Relative Units */
+    --body-font: 1.1rem;
+    --section-width: 90%;
+    --footer-gap: 5vh;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Lora', Arial;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    min-height: var(--footer-gap);  /* Relative unit use */
+}
+
+/* The Box Model */
+main {
+    width: var(--section-width);
+    max-width: var(--page-width);
+    min-width: 320px;
+
+    /* Box Model Shorthand */
+    margin: 40px auto; 
+    padding: 2rem;
+    border: var(--border-size) solid var(--accent-color);
+    
+    background-color: #3a3a3a; /* Background requirement */
+}
+
+/* Longhand Syntax */
+section {
+    /* Longhand Margin */
+    margin-top: 10px;
+    margin-right: 0px;
+    margin-bottom: var(--margin-mm);
+    margin-left: 0px;
+
+    /* Longhand Padding */
+    padding-top: 15px;
+    padding-right: 5px;
+    padding-bottom: 15px;
+    padding-left: 5px;
+
+    /* Longhand Border */
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--text-main);
+}
+
+/* Text */
+header {
+    text-align: center;
+}
+
+h1 {
+    color: var(--accent-color);
+    text-decoration: underline wavy var(--wide-gamut);
+    font-size: var(--font-pt); /* Using absolute unit */
+}
+
+/* Display */
+nav {
+    position: sticky; /* Position 1 */
+    top: 0;
+    background-color: var(--bg-color);
+    z-index: 100;
+}
+
+nav a {
+    display: inline-block; /* Display 1 */
+    padding: 10px;
+    color: var(--text-main);
+    text-decoration: none;
+}
+
+.hidden-element {
+    display: none; /* Display 2 */
+}
+
+footer {
+    position: relative; /* Position 2 */
+    margin-top: var(--footer-gap);
+    color: var(--named-color); /* Color name use */
+}
+
+/* Pseudo Class */
+nav a:hover {
+    color: var(--wide-gamut);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+input:focus {
+    border-color: var(--accent-color);
+}
