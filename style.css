@@ -110,3 +110,55 @@ nav a:hover {
 input:focus {
     border-color: var(--accent-color);
 }
+
+/* CSS grid */
+#visuals {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    padding: 10px;
+}
+
+#visuals > div {
+    background: #3a3a3a;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Flexbox */
+nav {
+    display: flex;
+    flex-direction: row;    /* Horizontal line */
+    justify-content: center;    /* Center them */
+    gap: 30px;  /* Space between links */
+    padding: 1rem;
+}
+
+#attendence ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 15px;
+}
+
+/* Media Query */
+@media (max-width: 768px) {
+    #visuals {
+        grid-template-columns: 1fr;
+    }
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    main {
+        width: 95%;
+    }
+}
+
+/* Ensure media stays within its grid container */
+#visuals img, 
+#visuals video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
